@@ -9,7 +9,7 @@ require 'rspec/autorun'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
-  config.order = "random"
+  #config.order = "random"
 
   require 'database_cleaner'
   config.before(:suite) do

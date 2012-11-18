@@ -1,17 +1,12 @@
-class PostPresenter < Struct.new(:post)
-  include ApplicationPresenter
-
-  def as_json
-    result = {}
-
-    [:title, :stub, :body, :created_at].each do |key|
-      result[key] = post.send(key)
-    end
-
-    result.merge \
-      url:        post_url(post),
-      previous:   PostIndexPresenter.new(post.previous),
-      next:       PostIndexPresenter.new(post.next)
+class PostPresenter < ApplicationPresenter
+  def default_serialiser_fields
+    [:title, :stub, :body, :created_at]
   end
 
+  def serialiser_extras
+    { url:        post_url(delegate) }.tap do |h|
+      h[:previous] = PostIndexPresenter.new(delegate.previous) if delegate.previous
+      h[:next]     = PostIndexPresenter.new(delegate.next) if delegate.next
+    end
+  end
 end

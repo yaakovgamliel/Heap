@@ -6,4 +6,9 @@ class PostsController < ApplicationController
     respond_with PostIndexPresenter.create(@posts)
   end
 
+  def show
+    @post = Post.with_stub(params[:id])
+    respond_with PostPresenter.new(@post)
+  end
+
 end

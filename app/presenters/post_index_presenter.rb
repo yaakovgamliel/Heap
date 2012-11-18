@@ -1,20 +1,9 @@
-class PostIndexPresenter < Struct.new(:post)
-  include ApplicationPresenter
-
-  def self.create(scope)
-    Enumerator.new do |y|
-      scope.each do |post|
-        y << self.new(post)
-      end
-    end
+class PostIndexPresenter < ApplicationPresenter
+  def default_serialiser_fields
+    [:title, :stub, :created_at]
   end
 
-  def as_json(*opts)
-    { 
-      title:      post.title, 
-      stub:       post.stub, 
-      url:        post_url(post),
-      created_at: post.created_at
-    }
+  def serialiser_extras
+    { url: post_url(delegate) }
   end
 end

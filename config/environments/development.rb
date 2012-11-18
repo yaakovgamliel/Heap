@@ -30,4 +30,6 @@ Heap::Application.configure do
   config.assets.debug = true
 
   config.ember.variant = :development
+
+  Rails.application.routes.default_url_options[:host]= 'logheap.dev'
 end

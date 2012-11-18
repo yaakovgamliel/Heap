@@ -1,0 +1,2 @@
+class PrivateUserPresenter < UserPresenter
+end

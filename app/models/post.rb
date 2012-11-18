@@ -3,12 +3,15 @@ class Post
   include Mongoid::Timestamps
   include Mongoid::Versioning
 
-  field :title, type: String
-  field :stub,  type: String, default: -> { Token.generate }
-  field :body,  type: String
+  belongs_to :user
+
+  field :title,     type: String
+  field :stub,      type: String, default: -> { Token.generate }
+  field :body,      type: String
+  field :posted_at, type: DateTime
 
   def self.in_reverse_chronological_order
-    asc :created_at
+    desc :created_at
   end
 
   def self.before(post)
@@ -19,12 +22,16 @@ class Post
     where(:created_at.gt => post.created_at).asc(:created_at)
   end
 
+  def self.with_stub(stub)
+    where(:stub => stub).last
+  end
+
   def next
-    Post.after(self).first
+    @next ||= Post.after(self).first
   end
 
   def previous
-    Post.before(self).first
+    @previous ||= Post.before(self).first
   end
 
   def to_param

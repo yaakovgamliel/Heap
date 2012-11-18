@@ -5,6 +5,8 @@ gem 'mongoid', '~> 3.0.0'
 gem 'em-synchrony'
 gem 'thin'
 gem 'haml-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -23,4 +25,6 @@ group :test, :development do
   gem 'guard-bundler'
   gem 'rb-fsevent'
   gem 'terminal-notifier-guard'
+  gem 'fabrication'
+  gem 'faker'
 end
