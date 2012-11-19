@@ -4,7 +4,7 @@ class User
   include Mongoid::Versioning
 
   has_many :authorisations
-  has_many :posts
+  has_many :heaplogs
 
   field :stub,        type: String, default: -> { Token.generate }
   field :name,        type: String, default: -> { provided['name'] }

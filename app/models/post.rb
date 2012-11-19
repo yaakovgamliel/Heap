@@ -3,7 +3,7 @@ class Post
   include Mongoid::Timestamps
   include Mongoid::Versioning
 
-  belongs_to :user
+  belongs_to :heaplog
 
   field :title,     type: String
   field :stub,      type: String, default: -> { Token.generate }
