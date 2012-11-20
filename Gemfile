@@ -23,8 +23,10 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-bundler'
+  gem 'guard-jasmine'
   gem 'rb-fsevent'
   gem 'terminal-notifier-guard'
   gem 'fabrication'
   gem 'faker'
+  gem 'jasminerice'
 end
