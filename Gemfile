@@ -12,6 +12,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'ember-rails', github: 'emberjs/ember-rails'
+  gem 'jquery-rails'
   gem 'hamlbars', github: 'jamesotron/hamlbars', branch: 'v2.0'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
@@ -24,6 +25,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-bundler'
   gem 'guard-jasmine'
+  gem 'guard-jshint-on-rails'
   gem 'rb-fsevent'
   gem 'terminal-notifier-guard'
   gem 'fabrication'

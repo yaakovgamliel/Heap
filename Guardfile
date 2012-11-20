@@ -18,8 +18,15 @@ guard 'rspec' do
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
 end
 
-guard :jasmine do
+guard :jasmine, server_env: :test, port: 8888 do
   watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$}) { 'spec/javascripts' }
   watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
   watch(%r{app/assets/javascripts/(.+?)\.(js\.coffee|js|coffee)(?:\.\w+)*$}) { |m| "spec/javascripts/#{ m[1] }_spec.#{ m[2] }" }
+end
+
+# verify that application Javascript files are lintable
+# see https://github.com/psionides/jslint_on_rails
+guard 'jshint-on-rails' do
+  # watch for changes to application javascript files
+  watch(%r{^app/assets/javascripts/.*\.js$})
 end
