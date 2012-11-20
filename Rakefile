@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Heap::Application.load_tasks
+
+task :spec => 'guard:jasmine'
