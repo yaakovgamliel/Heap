@@ -31,4 +31,5 @@ group :test, :development do
   gem 'fabrication'
   gem 'faker'
   gem 'jasminerice'
+  gem 'sinon-rails'
 end
