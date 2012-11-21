@@ -2,7 +2,11 @@ class HeaplogsController < ApplicationController
   respond_to :json
 
   def index
-    @heaplogs = Heaplog.all
+    @heaplogs = if params[:ids]
+                  Heaplog.where(:_id.in => params[:ids])
+                else
+                  Heaplog.all
+                end
     respond_with @heaplogs
   end
 
