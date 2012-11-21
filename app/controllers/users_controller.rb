@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    respond_with UserIndexPresenter.create(@users)
+    respond_with @users
   end
 
   def show
-    @user = User.with_stub(params[:id])
-    respond_with UserPresenter.new(@user)
+    @user = User.with_nickname(params[:id])
+    respond_with @user
   end
 end

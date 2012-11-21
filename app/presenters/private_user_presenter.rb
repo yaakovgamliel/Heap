@@ -1,2 +1,0 @@
-class PrivateUserPresenter < UserPresenter
-end

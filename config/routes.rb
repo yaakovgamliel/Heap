@@ -4,6 +4,7 @@ Heap::Application.routes.draw do
 
   resources :posts, defaults: { format: 'json' }, except: [:new]
   resources :users, defaults: { format: 'json' }, except: [:new]
+  resources :heaplogs, defaults: { format: 'json' }, except: [:new]
 
   #match '/*' => 'home#index', via: :get
   root :to => 'home#index'

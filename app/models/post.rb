@@ -6,7 +6,7 @@ class Post
   belongs_to :heaplog
 
   field :title,     type: String
-  field :stub,      type: String, default: -> { Token.generate }
+  field :token,      type: String, default: -> { Token.generate }
   field :body,      type: String
   field :posted_at, type: DateTime
 
@@ -22,8 +22,8 @@ class Post
     where(:created_at.gt => post.created_at).asc(:created_at)
   end
 
-  def self.with_stub(stub)
-    where(:stub => stub).last
+  def self.with_token(token)
+    where(:token => token).last
   end
 
   def next
@@ -35,6 +35,10 @@ class Post
   end
 
   def to_param
-    stub
+    token
+  end
+
+  def active_model_serializer
+    PostSerializer
   end
 end

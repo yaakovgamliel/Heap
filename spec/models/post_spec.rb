@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Post do
-  describe '#stub' do
+  describe '#token' do
     it "generates a token for each new post" do
       Token.stub(:generate).and_return('unique_token')
-      subject.stub.should eq('unique_token')
+      subject.token.should eq('unique_token')
     end
   end
 
@@ -94,10 +94,10 @@ describe Post do
     end
   end
 
-  describe '.with_stub' do
-    subject { Post.with_stub(post.stub) }
+  describe '.with_token' do
+    subject { Post.with_token(post.token) }
 
-    describe "when a post with matching stub exists" do
+    describe "when a post with matching token exists" do
       let(:post) { Fabricate(:post) }
 
       it "returns the post" do
@@ -109,7 +109,7 @@ describe Post do
       let(:post) { stub(:post) }
 
       it "returns nil" do
-        post.stub!(:stub).and_return("foo")
+        post.stub!(:token).and_return("foo")
         subject.should be_nil
       end
     end

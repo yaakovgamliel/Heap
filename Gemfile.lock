@@ -19,6 +19,12 @@ GIT
       sprockets
       tilt
 
+GIT
+  remote: git://github.com/jamesotron/stringex.git
+  revision: 1e1cf992b216bfa63202c66951f76c00ba8cdfef
+  specs:
+    stringex (1.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -222,6 +228,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   coffee-rails (~> 3.2.1)
   database_cleaner
   em-synchrony
@@ -245,6 +252,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   sinon-rails
+  stringex!
   terminal-notifier-guard
   therubyracer
   thin

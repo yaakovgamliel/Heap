@@ -3,12 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.in_reverse_chronological_order
-    respond_with PostIndexPresenter.create(@posts)
+    respond_with @posts
   end
 
   def show
-    @post = Post.with_stub(params[:id])
-    respond_with PostPresenter.new(@post)
+    @post = Post.with_token(params[:id])
+    respond_with @post
   end
 
 end

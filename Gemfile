@@ -7,6 +7,8 @@ gem 'thin'
 gem 'haml-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'active_model_serializers'
+gem 'stringex', github: 'jamesotron/stringex'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

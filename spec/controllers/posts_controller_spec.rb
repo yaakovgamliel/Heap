@@ -1,19 +1,20 @@
 require 'spec_helper'
 
 describe PostsController do
-  let(:posts) { (0..2).map { Fabricate(:post) } }
+  let(:posts) { (0..5).map { Fabricate(:post) } }
+  subject { JSON.parse(response.body) }
 
   describe '#index' do
     before { posts }
 
     it "returns valid JSON" do
       get :index, format: 'json'
-      expect { JSON.parse(response.body) }.not_to raise_error
+      expect { subject }.not_to raise_error
     end
 
     it "returns a list of posts" do
       get :index, format: 'json'
-      response.body.should eq(PostIndexPresenter.create(Post.in_reverse_chronological_order).to_json)
+      subject['posts'].map{ |p| p['id'] }.should eq(Post.in_reverse_chronological_order.map(&:to_param))
     end
   end
 
@@ -22,12 +23,12 @@ describe PostsController do
 
     it "returns valid JSON" do
       get :show, format: 'json', id: posts.first.to_param
-      expect { JSON.parse(response.body) }.not_to raise_error
+      expect { subject }.not_to raise_error
     end
 
     it "returns a post" do
       get :show, format: 'json', id: posts.first.to_param
-      response.body.should eq(PostPresenter.new(posts.first).to_json)
+      subject['post']['id'].should eq(posts.first.to_param)
     end
   end
 

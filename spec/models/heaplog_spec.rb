@@ -4,16 +4,21 @@ describe Heaplog do
   subject { Fabricate(:heaplog) }
   let(:user) { subject.user }
 
-  describe '#stub' do
-    it "generates a token for each new post" do
-      Token.stub(:generate).and_return('unique_token')
-      subject.stub.should eq('unique_token')
-    end
-  end
-
   describe '#name' do
     it "generates a name by default" do
       subject.name.should eq("#{user.name.s} heap")
+    end
+  end
+
+  describe '#short_name' do
+    it "generates a short name by default" do
+      subject.short_name.should eq(subject.name.to_url)
+    end
+  end
+
+  describe '.with_short_name' do
+    it 'finds a heaplog by short name' do
+      Heaplog.with_short_name(subject.short_name).should eq(subject)
     end
   end
 end
