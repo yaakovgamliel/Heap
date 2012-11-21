@@ -31,4 +31,8 @@ class User
   def active_model_serializer
     UserSerializer
   end
+
+  def serialize_to_json(serializer=active_model_serializer)
+    serializer.new(self).as_json.to_json
+  end
 end
