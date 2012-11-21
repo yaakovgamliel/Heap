@@ -15,7 +15,7 @@ describe UsersController do
 
     it "returns a list of users" do
       get :index, format: 'json'
-      subject['users'].map { |u| u['id'] }.should eq(User.all.map(&:to_param))
+      subject['users'].map { |u| u['id'] }.should eq(User.all.map { |u| u.id.to_s })
     end
   end
 
@@ -27,7 +27,7 @@ describe UsersController do
 
     it "returns a user" do
       get :show, format: 'json', id: users.first.to_param
-      subject['user']['id'].should eq(users.first.to_param)
+      subject['user']['id'].should eq(users.first.id.to_s)
     end
   end
 end

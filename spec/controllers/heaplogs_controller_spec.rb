@@ -15,7 +15,7 @@ describe HeaplogsController do
 
     it "returns a list of heaplogs" do
       get :index, format: 'json'
-      subject['heaplogs'].map { |u| u['id'] }.should eq(Heaplog.all.map(&:to_param))
+      subject['heaplogs'].map { |u| u['id'] }.should eq(Heaplog.all.map{ |u| u.id.to_s })
     end
   end
 
@@ -27,7 +27,7 @@ describe HeaplogsController do
 
     it "returns a user" do
       get :show, format: 'json', id: heaplogs.first.to_param
-      subject['heaplog']['id'].should eq(heaplogs.first.to_param)
+      subject['heaplog']['id'].should eq(heaplogs.first.id.to_s)
     end
   end
 end

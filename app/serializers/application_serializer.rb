@@ -4,6 +4,6 @@ class ApplicationSerializer < ActiveModel::Serializer
   attributes :id
 
   def id
-    object.to_param
+    object.id
   end
 end
