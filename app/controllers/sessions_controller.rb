@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def create
     auth = request.env['omniauth.auth']
@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
     end
     self.current_user = @auth.user
 
-    respond_with UserPresenter.new(current_user)
+    #respond_with current_user
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { respond_with current_user }
+    end
   end
 
   def destroy
