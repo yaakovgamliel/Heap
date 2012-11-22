@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.try(:id)
   end
+
+  def self.responder
+    SerializingResponder
+  end
 end

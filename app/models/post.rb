@@ -2,6 +2,7 @@ class Post
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Versioning
+  include JsonSerializingModel
 
   belongs_to :heaplog
 
@@ -36,9 +37,5 @@ class Post
 
   def to_param
     token
-  end
-
-  def active_model_serializer
-    PostSerializer
   end
 end

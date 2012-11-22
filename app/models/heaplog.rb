@@ -1,6 +1,7 @@
 class Heaplog
   include Mongoid::Document
   include Mongoid::Timestamps
+  include JsonSerializingModel
 
   belongs_to :user
   has_many   :posts
@@ -19,9 +20,5 @@ class Heaplog
 
   def to_param
     short_name
-  end
-
-  def active_model_serializer
-    HeaplogSerializer
   end
 end

@@ -2,6 +2,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Versioning
+  include JsonSerializingModel
 
   has_many :authorisations
   has_many :heaplogs
@@ -26,13 +27,5 @@ class User
 
   def to_param
     nickname
-  end
-
-  def active_model_serializer
-    UserSerializer
-  end
-
-  def serialize_to_json(serializer=active_model_serializer)
-    serializer.new(self).as_json.to_json
   end
 end
