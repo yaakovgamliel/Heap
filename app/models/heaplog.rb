@@ -12,6 +12,8 @@ class Heaplog
   
   field :public, type: Boolean, default: true
 
+  index({short_name: 1}, {unique: true})
+
   validates_uniqueness_of :short_name
 
   def self.with_short_name(short_name)

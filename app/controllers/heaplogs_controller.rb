@@ -1,11 +1,13 @@
 class HeaplogsController < ApplicationController
   respond_to :json, :html
 
+  before_filter :generate_scope
+
   def index
     @heaplogs = if params[:ids]
-                  Heaplog.where(:_id.in => params[:ids])
+                  @scope.where(:_id.in => params[:ids])
                 else
-                  Heaplog.all
+                  @scope.all
                 end
     respond_with @heaplogs
   end
@@ -13,5 +15,16 @@ class HeaplogsController < ApplicationController
   def show
     @heaplog = Heaplog.with_short_name(params[:id])
     respond_with @heaplog
+  end
+
+  private
+
+  def generate_scope
+    @user = User.with_nickname(params[:user])
+    @scope = if @user
+               @user.heaplogs
+             else
+               Heaplog
+             end
   end
 end
