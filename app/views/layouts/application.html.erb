@@ -15,11 +15,6 @@
        <%= javascript_include_tag 'html5' %>
     <![endif]-->
     <%= csrf_meta_tags %>
-    <% if signed_in? %>
-      <script type='text/javascript'>
-        window.currentUserAttributes = <%= current_user.serialize_to_json.html_safe %>;
-      </script>
-    <% end %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>

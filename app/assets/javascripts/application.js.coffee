@@ -18,4 +18,5 @@
 #= require heap
 #= require_tree .
 
-window.Heap = Ember.Application.create()
+window.Heap = Ember.Application.create
+  ready: -> Heap.preserializedObjectLoader

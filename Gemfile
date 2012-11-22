@@ -18,6 +18,7 @@ group :assets do
   gem 'hamlbars', github: 'jamesotron/hamlbars', branch: 'v2.0'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
+  gem 'inflection-js-rails'
 end
 
 group :test, :development do
