@@ -3,6 +3,6 @@ class HeaplogSerializer < ApplicationSerializer
   has_one :user
   
   def url
-    heaplog_url(object)
+    user_log_url(object, user: object.user)
   end
 end

@@ -7,18 +7,17 @@ describe HeaplogsController do
   before { heaplogs }
   subject { JSON.parse(response.body) }
 
-  # FIXME I can't figure out why this is failing.
-  # describe "#index" do
-  #   it "returns valid JSON" do
-  #     get :index, format: 'json'
-  #     expect { subject }.not_to raise_error
-  #   end
+  describe "#index" do
+    it "returns valid JSON" do
+      get :index, format: 'json'
+      expect { subject }.not_to raise_error
+    end
 
-  #   it "returns a list of heaplogs" do
-  #     get :index, format: 'json'
-  #     subject['heaplogs'].map { |u| u['id'] }.should eq(Heaplog.all.map{ |u| u.id.to_s })
-  #   end
-  # end
+    it "returns a list of heaplogs" do
+      get :index, format: 'json'
+      subject['heaplogs'].map { |u| u['id'] }.should eq(Heaplog.all.map{ |u| u.id.to_s })
+    end
+  end
 
   describe "#show" do
     it "returns valid JSON" do
