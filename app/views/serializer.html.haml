@@ -1,2 +1,5 @@
+- if signed_in?
+  :javascript
+    window.preserializedCurrentUser = #{serialize_resource(current_user)};
 :javascript
   window.preserializedObjects = #{serialize_resource(resource)};
