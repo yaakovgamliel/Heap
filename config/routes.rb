@@ -1,4 +1,6 @@
 Heap::Application.routes.draw do
+  mount Jasminerice::Engine => '/jasmine' if Rails.env.test? || Rails.env.development?
+
   match '/auth/:provider/callback', to: 'sessions#create'
   match '/auth/logout', to: 'sessions#destroy'
 
@@ -6,8 +8,8 @@ Heap::Application.routes.draw do
   resources :users, except: [:new]
   resources :heaplogs, except: [:new]
 
-  match '/:id',       to: 'users#show',    as: :user
-  match '/:user/:id', to: 'heaplogs#show', as: :heaplog
+  match '/:user',     to: 'heaplogs#index', as: :heaplogs
+  match '/:user/:id', to: 'heaplogs#show',  as: :heaplog
 
   root :to => 'home#index'
 end

@@ -13,7 +13,7 @@ class HeaplogsController < ApplicationController
   end
 
   def show
-    @heaplog = Heaplog.with_short_name(params[:id])
+    @heaplog = @scope.with_short_name(params[:id])
     respond_with @heaplog
   end
 
