@@ -25,6 +25,13 @@ GIT
   specs:
     stringex (1.1.0)
 
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 720f1dabf8858b55fa2542fccad4a04b075f951c
+  specs:
+    active_model_serializers (0.5.2)
+      activemodel (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,8 +48,6 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    active_model_serializers (0.6.0)
-      activemodel (>= 3.0)
     activemodel (3.2.9)
       activesupport (= 3.2.9)
       builder (~> 3.0.0)
@@ -233,7 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
+  active_model_serializers!
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   database_cleaner
