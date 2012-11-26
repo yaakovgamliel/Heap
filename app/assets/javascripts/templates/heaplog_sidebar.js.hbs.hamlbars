@@ -1,0 +1,3 @@
+.banner.jumbotron.subhead
+  %h1 {{name}}
+  %h2 {{description}}

@@ -1,1 +1,6 @@
-= hb 'outlet'
+.container-fluid
+  .row-fluid
+    .span4
+      = hb 'outlet sidebar'
+    .span8
+      = hb 'outlet'

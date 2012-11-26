@@ -20,7 +20,7 @@ class User
   validates_uniqueness_of :nickname
 
   def self.with_nickname(nickname)
-    where(nickname: nickname).last
+    where(nickname: nickname)
   end
 
   def self.create_from_hash!(hash)

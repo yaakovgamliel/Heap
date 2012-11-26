@@ -1,0 +1,5 @@
+%ul.posts
+  = hb 'each post in controller' do
+    = hb 'with post' do
+      %li 
+        = hb 'title'

@@ -20,7 +20,7 @@ class HeaplogsController < ApplicationController
   private
 
   def generate_scope
-    @user = User.with_nickname(params[:user])
+    @user = User.with_nickname(params[:user]).last
     @scope = if @user
                @user.heaplogs
              else

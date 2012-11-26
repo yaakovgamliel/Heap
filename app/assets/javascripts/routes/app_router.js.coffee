@@ -1,30 +1,25 @@
 Heap.Router = Em.Router.extend
   location: 'history'
+  enableLogging: true
 
   root: Em.Route.extend
     index: Em.Route.extend
       route: '/'
+      redirectsTo: 'heap'
 
-    users: Em.Route.extend
-      route: '/users'
-      index: Em.Route.extend
-        route: '/'
+    heaplog_index: Em.Route.extend
+      route: '/:nickname'
 
-      show: Em.Route.extend
-        route: '/:nickname'
+      deserialize: (router,context)->
+        Heap.User.withNickname(context.nickname)
 
-    posts: Em.Route.extend
-      route: '/posts'
-      index: Em.Route.extend
-        route: '/'
+      serialize: (router,context)->
+        {nickname: context.get('nickname')}
 
-      show: Em.Route.extend
-        route: '/:token'
+      connectOutlets: (router, context)->
+        console.log "Outlet context: ", Em.inspect(context)
+        router.get('applicationController').connectOutlet('sidebar', 'heaplogSidebar', context.default_heaplog)
+        # router.get('applicationController').connectOutlet('heaplogDisplay', 'heaplog', heaplog)
 
-    heaplogs: Em.Route.extend
-      route: '/heaplogs'
-      index: Em.Route.extend
-        route: '/'
-
-      show: Em.Route.extend
-        route: '/:short_name'
+    heaplog: Em.Route.extend
+      route: '/:nickname/:short_name'

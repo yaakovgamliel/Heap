@@ -7,4 +7,4 @@ describe 'Ember.js', ->
 
 describe 'Ember.js Data API', ->
   it 'is the expected version', ->
-    expect(DS.CURRENT_API_REVISION).toEqual(4)
+    expect(DS.CURRENT_API_REVISION).toEqual(8)
