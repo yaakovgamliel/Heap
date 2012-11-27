@@ -1,10 +1,11 @@
-#= require application
-
 describe 'Heap.User', ->
 
   beforeEach ->
-    Heap.store = Heap.Store.create
-      adapter:  DS.FixtureAdapter.create()
+    store = Heap.Store.create
+      adapter:  DS.FixtureAdapter.create
+        simulateRemoteResponse: false
+    DS.set 'defaultStore', store
+    Heap.store = store
     Ember.run.begin()
 
   afterEach ->
@@ -28,10 +29,6 @@ describe 'Heap.User', ->
       beforeEach ->
         Heap.User.FIXTURES = [data]
 
-      it 'loads the fixtures', ->
-        expected_user = Heap.User.find(data.id)
-        expect(expected_user.get('name')).toEqual(data.name)
-
       it 'finds a user by nickname', ->
         expected_user = Heap.User.withNickname(data.nickname)
         expect(expected_user.get('name')).toEqual(data.name)
@@ -54,7 +51,7 @@ describe 'Heap.User', ->
 
     describe 'when the user has only one log', ->
       it 'returns the only heaplog', ->
-        user.heaplogs = [1]
+        user.heaplogs = [heaplog2.id]
 
         Heap.User.FIXTURES = [user]
         Heap.Heaplog.FIXTURES = [heaplog2]
@@ -64,7 +61,7 @@ describe 'Heap.User', ->
 
     describe 'when the user has multiple logs and no default', ->
       it 'returns the default heaplog', ->
-        user.heaplogs = [1,2]
+        user.heaplogs = [heaplog1.id, heaplog2.id]
         heaplog2.default = true
         
         Heap.User.FIXTURES = [user]
