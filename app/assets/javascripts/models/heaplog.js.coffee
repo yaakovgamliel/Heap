@@ -7,3 +7,4 @@ Heap.Heaplog = DS.Model.extend
   name:        DS.attr('string')
   description: DS.attr('string')
   public:      DS.attr('boolean')
+  isDefault:   DS.attr('boolean')

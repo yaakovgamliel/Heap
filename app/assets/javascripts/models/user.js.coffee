@@ -9,9 +9,9 @@ user = DS.Model.extend
   extra_url:   DS.attr 'string'
 
   defaultHeaplog: (->
-    defaultLog = @get('heaplogs').find (log)->
-      log.get('isDefault') == true
-    return defaultLog if defaultLog?
+    defaultLogs = @get('heaplogs').filterProperty('isDefault')
+    return defaultLogs.get('firstObject') if defaultLogs.get('length') > 0
+
     @get('heaplogs').get('firstObject') if @get('heaplogs').get('length') > 0
   ).property('heaplogs')
 

@@ -1,5 +1,3 @@
-#= require application
-
 Heap.FakeModel = DS.Model.extend
   name: DS.attr('string')
 

@@ -5,6 +5,7 @@
 #= require bootstrap
 #= require_self
 #= require heap
+#= require preserialized_object_loader
 
 window.Heap = Ember.Application.create
   ready: ->
