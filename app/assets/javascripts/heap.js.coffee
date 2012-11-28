@@ -5,6 +5,7 @@
 #= require_tree ./helpers
 #= require_tree ./templates
 #= require_tree ./routes
+#= require ./preserialized_object_loader
 #= require_self
 
 Heap.initialize()

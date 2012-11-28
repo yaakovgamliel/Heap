@@ -1,5 +1,3 @@
-#= require application
-
 describe 'window.Heap', ->
   it 'is defined', ->
     expect(window.Heap).toBeDefined()

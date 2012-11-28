@@ -6,7 +6,7 @@ user = DS.Model.extend
   location:    DS.attr 'string'
   image:       DS.attr 'string'
   description: DS.attr 'string'
-  extra_url:   DS.attr 'string'
+  extraUrl:    DS.attr 'string'
 
   defaultHeaplog: (->
     defaultLogs = @get('heaplogs').filterProperty('isDefault')
@@ -18,12 +18,12 @@ user = DS.Model.extend
 user.reopenClass
   withNickname: (nickname)->
     # Look in the local store first...
-    matching_users = Heap.store.filter user, (data)->
+    matchingUsers = Heap.store.filter user, (data)->
       data.get('nickname') == nickname
-    return matching_users.get('lastObject') if matching_users.get('length') > 0
+    return matchingUsers.get('lastObject') if matchingUsers.get('length') > 0
 
     # Then query the remote server...
-    matching_users = Heap.store.find user, {nickname: nickname}
-    return matching_users.get('lastObject') if matching_users.get('length') > 0
+    matchingUsers = Heap.store.find user, {nickname: nickname}
+    return matchingUsers.get('lastObject') if matchingUsers.get('length') > 0
 
 Heap.User = user

@@ -1,3 +1,8 @@
 .banner.jumbotron.subhead
   %h1 {{name}}
   %h2 {{description}}
+  .userinfo
+    = hb 'if userImageUrl' do
+      %img{bind: {src: 'userImageUrl', alt: 'userName'}}
+    by
+    = hb 'userName'

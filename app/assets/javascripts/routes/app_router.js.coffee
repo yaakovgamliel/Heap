@@ -17,9 +17,8 @@ Heap.Router = Em.Router.extend
         {nickname: context.get('nickname')}
 
       connectOutlets: (router, context)->
-        console.log "Outlet context: ", Em.inspect(context)
-        router.get('applicationController').connectOutlet('sidebar', 'heaplogSidebar', context.default_heaplog)
-        # router.get('applicationController').connectOutlet('heaplogDisplay', 'heaplog', heaplog)
+        defaultHeaplog = context.get('defaultHeaplog')
+        router.get('applicationController').connectOutlet('sidebar', 'heaplogSidebar', defaultHeaplog)
 
     heaplog: Em.Route.extend
       route: '/:nickname/:short_name'

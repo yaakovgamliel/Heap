@@ -1,7 +1,7 @@
 Heap.Heaplog = DS.Model.extend
   
-  user:        DS.belongsTo('Heap.User')
-  posts:       DS.hasMany('Heap.Post')
+  user:        DS.belongsTo 'Heap.User', {key: 'user'}
+  # posts:       DS.hasMany('Heap.Post')
 
   stub:        DS.attr('string')
   name:        DS.attr('string')

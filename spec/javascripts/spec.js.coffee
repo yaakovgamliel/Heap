@@ -1,9 +1,7 @@
-#=require handlebars
-#=require jquery
-#=require ember
-#=require ember-data
-#=require_self
-#=require_tree ./
+#= require application
+#= require_tree ./
+#= require_self
 
-window.Heap = Em.Namespace.create()
+Heap.Router = null
+Heap.set('router', null)
 

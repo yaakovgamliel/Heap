@@ -1,4 +1,5 @@
 Heap.HeaplogSidebarController = Em.Controller.extend
-  nameBinding: 'context.name'
-  descriptionBinding: 'context.description'
-  userNicknameBinding: 'context.user.nickname'
+  nameBinding: 'content.name'
+  descriptionBinding: 'content.description'
+  userImageUrlBinding: 'user.image'
+  userNameBinding: 'user.name'
