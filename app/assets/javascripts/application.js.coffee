@@ -7,7 +7,7 @@
 #= require heap
 
 window.Heap = Ember.Application.create
+  storeBinding: 'router.store'
   ready: ->
-    Heap.store = Heap.Store.create()
     Heap.preserializedObjectLoader()
     Heap.preserializedCurrentUserLoader()
