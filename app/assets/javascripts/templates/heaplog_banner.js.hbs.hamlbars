@@ -4,10 +4,9 @@
       .userinfo
         = hb 'if userImageUrl' do
           %img{bind: {src: 'userImageUrl', alt: 'userName'}}
-        %br
-        by
-        %br
-        = hb 'userName'
+        %span.by by
+        %span.whom
+          = hb 'userName'
       %h1
         = hb 'name'
       %p
