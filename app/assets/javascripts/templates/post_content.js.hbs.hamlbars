@@ -1,0 +1,6 @@
+.post.content
+  %h1
+    = hb 'title'
+
+  .body
+    = hb 'body'

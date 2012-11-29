@@ -1,6 +1,7 @@
 class HeaplogSerializer < ApplicationSerializer
-  attributes :name, :description, :short_name, :url, :user_id
+  attributes :name, :description, :short_name, :url, :user_id, :banner_url
   has_one :user
+  has_many :posts
 
   def user_id
     object.try(:user).try(:id)

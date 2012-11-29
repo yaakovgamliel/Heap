@@ -16,9 +16,13 @@ Heap.Router = Em.Router.extend
       serialize: (router,context)->
         {nickname: context.get('nickname')}
 
-      connectOutlets: (router, context)->
-        defaultHeaplog = context.get('defaultHeaplog')
-        router.get('applicationController').connectOutlet('sidebar', 'heaplogSidebar', defaultHeaplog)
+      connectOutlets: (router, user)->
+        defaultHeaplog = user.get('defaultHeaplog')
+        appController = router.get('applicationController')
+        appController.connectOutlet('banner', 'heaplogBanner', defaultHeaplog)
+        appController.connectOutlet('sidebar', 'heaplogSidebar', user)
+        appController.connectOutlet('list', 'heaplogPostList', defaultHeaplog)
+        appController.connectOutlet('content', 'postContent', defaultHeaplog.get('posts.firstObject'))
 
     heaplog: Em.Route.extend
       route: '/:nickname/:short_name'

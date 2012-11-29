@@ -1,0 +1,14 @@
+%header{bind: {style: 'cssStyleAdditions'}}
+  .jumbotron.subhead
+    .container
+      .userinfo
+        = hb 'if userImageUrl' do
+          %img{bind: {src: 'userImageUrl', alt: 'userName'}}
+        %br
+        by
+        %br
+        = hb 'userName'
+      %h1
+        = hb 'name'
+      %p
+        = hb 'description'

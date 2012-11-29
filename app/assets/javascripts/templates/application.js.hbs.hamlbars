@@ -1,6 +1,9 @@
+= hb 'outlet banner'
 .container-fluid
-  .row-fluid
-    .span4
+  .row
+    .span3.sidebar
       = hb 'outlet sidebar'
-    .span8
-      = hb 'outlet'
+    .span3.list
+      = hb 'outlet list'
+    .span6.content
+      = hb 'outlet content'

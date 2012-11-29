@@ -9,6 +9,7 @@ class Heaplog
   field :name, type: String, default: -> { "#{user.name.s} heap" }
   field :description, type: String
   field :short_name, type: String, default: -> { name.to_url }
+  field :banner_url, type: String
   
   field :public, type: Boolean, default: true
 

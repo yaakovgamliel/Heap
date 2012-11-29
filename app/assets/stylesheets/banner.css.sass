@@ -1,0 +1,65 @@
+$green: #0a4716
+$gradient_dark: rgba(0,12,0,0.3)
+$gradient_light: rgba(255,255,128,0.3)
+
+header
+  width: 100%
+  margin: 0
+  padding: 0 20px
+  background: $green
+  margin:
+    left: -20px
+    right: -20px
+
+  .userinfo
+    margin:
+      top: 20px
+    float: right
+    text-align: center
+    img
+      box-shadow: inset 0px 0px 3px rgba(0,0,0,0.2), 0px 0px 7px rgba(0,0,0,0.8)
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      border: 3px solid white
+      max-width: 64px
+      height: auto
+      width: auto
+
+.jumbotron
+  color: white
+  position: relative
+  padding: 40px 0
+  text-align: center
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 30px rgba(0,0,0,0.75)
+  background: $green
+  background: -moz-linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $gradient_dark), color-stop(100%, $gradient_light))
+  background: -webkit-linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
+  background: -o-linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
+  background: -ms-linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
+  background: linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
+  box-shadow: inset 0px -7px 14px rgba(0,0,0,0.2), inset -3px 0px 24px rgba(0,0,0,0.1)
+  @media (max-width: 767px)
+    padding: 40px 20px
+    margin:
+      top: -20px
+      right: -20px
+      left: -20px
+  h1
+    font-size: 80px
+    font-weight: bold
+    letter-spacing: -1px
+    line-height: 1
+  p
+    font-size: 24px
+    font-weight: 200
+    line-height: 1.25
+    margin-bottom: 30px
+  .container
+    position: relative
+    z-index: 2
+    margin:
+      left: auto
+      right: auto
+    text-align: left

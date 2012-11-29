@@ -1,0 +1,5 @@
+%ul
+  = hb 'each posts' do
+    %li.post
+      %h1
+        = hb 'title'
