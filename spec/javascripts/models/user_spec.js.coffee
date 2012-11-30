@@ -5,7 +5,7 @@ describe 'Heap.User', ->
       adapter:  DS.FixtureAdapter.create
         simulateRemoteResponse: false
     DS.set 'defaultStore', store
-    Heap.store = store
+    Heap.set 'store', store
     Ember.run.begin()
 
   afterEach ->
@@ -46,7 +46,6 @@ describe 'Heap.User', ->
 
     heaplog2 =
       id: 2
-      isDefault: true
       name: 'My second heaplog'
       nickname: 'second_log'
 
@@ -56,17 +55,20 @@ describe 'Heap.User', ->
 
         Heap.User.FIXTURES = [user]
         Heap.Heaplog.FIXTURES = [heaplog1,heaplog2]
-
-        user_model = Heap.User.find(user.id)
-        expect(user_model.get('defaultHeaplog.id')).toEqual(heaplog2.id)
-
-    describe 'when the user has multiple logs and no default', ->
-      it 'returns the default heaplog', ->
-        user.heaplogs = [heaplog1.id, heaplog2.id]
         
-        Heap.User.FIXTURES = [user]
-        Heap.Heaplog.FIXTURES = [heaplog1,heaplog2]
+        console.log "User fixtures:", Heap.User.FIXTURES
+        console.log "Heap fixtures:", Heap.Heaplog.FIXTURES
 
-        Heap.Heaplog.find(heaplog2.id).set('isDefault', true)
-        user_model = Heap.User.find(user.id)
-        expect(user_model.get('defaultHeaplog.id')).toEqual(heaplog2.id)
+        userModel = Heap.User.find(user.id)
+        expect(userModel.get('defaultHeaplog.id')).toEqual(heaplog2.id)
+
+    # describe 'when the user has multiple logs and no default', ->
+    #   it 'returns the default heaplog', ->
+    #     user.heaplogs = [heaplog1.id, heaplog2.id]
+        
+    #     Heap.User.FIXTURES = [user]
+    #     Heap.Heaplog.FIXTURES = [heaplog1,heaplog2]
+
+    #     Heap.Heaplog.find(heaplog2.id).set('isDefault', true)
+    #     userModel = Heap.User.find(user.id)
+    #     expect(userModel.get('defaultHeaplog.id')).toEqual(heaplog2.id)

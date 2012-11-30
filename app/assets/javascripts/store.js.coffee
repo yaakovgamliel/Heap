@@ -1,3 +1,3 @@
 Heap.Store = DS.Store.extend
-  revision: 9
+  revision: 4
   adapter: DS.RESTAdapter.create()

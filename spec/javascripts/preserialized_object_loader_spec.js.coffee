@@ -4,8 +4,11 @@ Heap.FakeModel = DS.Model.extend
 describe 'Preserialized Object Loaders', ->
 
   beforeEach ->
-    Heap.store = Heap.Store.create
-      adapter:  DS.FixtureAdapter.create()
+    store = Heap.Store.create
+      adapter:  DS.FixtureAdapter.create
+        simulateRemoteResponse: false
+    Heap.set('store', store)
+    DS.set('defaultStore', store)
     Ember.run.begin()
 
   afterEach ->

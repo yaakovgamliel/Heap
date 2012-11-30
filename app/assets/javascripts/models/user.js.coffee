@@ -9,10 +9,13 @@ user = DS.Model.extend
   extraUrl:    DS.attr 'string'
 
   defaultHeaplog: (->
+    console.log "Looking for default heaplogs"
     defaultLogs = @get('heaplogs').filterProperty('isDefault')
     return defaultLogs.get('firstObject') if defaultLogs.get('length') > 0
 
-    @get('heaplogs').get('firstObject') if @get('heaplogs').get('length') > 0
+    console.log "Looking for any heaplogs"
+    console.log "All heaplogs: #{@get('heaplogs.length')}"
+    @get('heaplogs').get('firstObject') if @get('heaplogs.length') > 0
   ).property('heaplogs')
 
 user.reopenClass
