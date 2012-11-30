@@ -1,0 +1,63 @@
+= hb 'if canCreateHeaplogForThisUser' do
+
+  .hero-unit
+
+    %h1 Let's do this thing
+
+    %p
+      Enter the details for your new heap log below...
+
+    .well
+      %form.form-horizontal
+
+        .control-group
+          %label.control-label{for: 'newHeaplogName'}
+            Log name
+          .controls
+            %input#newHeaplogName{type: 'text', placeholder: 'Cats ahoy!'}
+
+        .control-group
+          %label.control-label{for: 'newHeaplogDescription'}
+            Description
+          .controls
+            %textarea#newHeaplogDescription{rows: 3, placeholder: 'The best collection of pictures of cats dressed as pirates anywhere on the internet!'}
+
+        .control-group
+          %label.control-label{for: 'newHeaplogShortName'}
+            URL
+          .controls
+            .input-prepend
+              %span.add-on
+                = surround '/', '/' do
+                  = hb 'userNickname'
+              %input#newHeaplogShortName{type: 'text', placeholder: 'cats-ahoy'}
+            %span.help-block
+              The URL for this log, which is used to identify it if you have
+              multiple logs and for linking to it and its posts.
+          
+          .control-group
+            %label.control-label{for: 'newHeaplogBanner'}
+              Banner image
+            .controls
+              %input#newHeaplogBanner{type: 'file'}
+              %span.help-block
+                A beautiful banner image for up the top of your log. Bigger is better, but have some sympathy for people on 3G.
+
+
+  = hb 'else'
+
+  .hero-unit
+    %h1 Unfinished business.
+
+    %h2
+      Oh no!
+
+      It looks like 
+      = hb 'name'
+      never completed their registration process by creating a log!
+
+    %p
+      I'm sure they have plenty of amazing things to share with you, perhaps
+      you can 
+      %a{bind: {href: 'usersTwitterUrl'}}
+        bug them to finish the job?

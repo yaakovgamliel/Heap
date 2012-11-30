@@ -21,10 +21,7 @@ Heap.Router = Em.Router.extend
         appController = router.get('applicationController')
         if defaultHeaplog?
           appController.connectOutlet('banner', 'heaplogBanner', defaultHeaplog)
-          appController.connectOutlet('sidebar', 'heaplogSidebar', user)
-          appController.connectOutlet('list', 'heaplogPostList', defaultHeaplog)
-          appController.connectOutlet('content', 'postContent', defaultHeaplog.get('posts.firstObject'))
+          appController.connectOutlet('page', 'heaplog', defaultHeaplog)
         else
           appController.connectOutlet('banner', 'userBanner', user)
-
-    heaplog: Em.Route.extend
+          appController.connectOutlet('page', 'newHeaplog', user)

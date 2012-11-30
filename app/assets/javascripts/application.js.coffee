@@ -7,6 +7,7 @@
 #= require heap
 
 window.Heap = Ember.Application.create
+  currentUser: null
   ready: ->
     # I know I shouldn't be explicitly creating a store, but I don't know what
     # the solution is :(
