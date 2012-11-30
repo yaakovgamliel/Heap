@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def index
     @scope = User.all
@@ -11,6 +11,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.with_nickname(params[:id]).last
-    respond_with @user
+    if @user
+      respond_with @user
+    else
+      not_found "No such user @#{params[:id]}."
+    end
   end
 end

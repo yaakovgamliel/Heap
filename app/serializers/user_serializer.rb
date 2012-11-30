@@ -3,6 +3,6 @@ class UserSerializer < ApplicationSerializer
   has_many :heaplogs
 
   def url
-    user_summary_url(user: user)
+    user_summary_url(id: user)
   end
 end

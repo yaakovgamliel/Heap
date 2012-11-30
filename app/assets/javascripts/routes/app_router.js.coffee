@@ -7,7 +7,7 @@ Heap.Router = Em.Router.extend
       route: '/'
       redirectsTo: 'heap'
 
-    heaplog_index: Em.Route.extend
+    heaplogs: Em.Route.extend
       route: '/:nickname'
 
       deserialize: (router,context)->
@@ -19,10 +19,12 @@ Heap.Router = Em.Router.extend
       connectOutlets: (router, user)->
         defaultHeaplog = user.get('defaultHeaplog')
         appController = router.get('applicationController')
-        appController.connectOutlet('banner', 'heaplogBanner', defaultHeaplog)
-        appController.connectOutlet('sidebar', 'heaplogSidebar', user)
-        appController.connectOutlet('list', 'heaplogPostList', defaultHeaplog)
-        appController.connectOutlet('content', 'postContent', defaultHeaplog.get('posts.firstObject'))
+        if defaultHeaplog?
+          appController.connectOutlet('banner', 'heaplogBanner', defaultHeaplog)
+          appController.connectOutlet('sidebar', 'heaplogSidebar', user)
+          appController.connectOutlet('list', 'heaplogPostList', defaultHeaplog)
+          appController.connectOutlet('content', 'postContent', defaultHeaplog.get('posts.firstObject'))
+        else
+          appController.connectOutlet('banner', 'userBanner', user)
 
     heaplog: Em.Route.extend
-      route: '/:nickname/:short_name'

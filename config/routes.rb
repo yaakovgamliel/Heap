@@ -8,7 +8,7 @@ Heap::Application.routes.draw do
   resources :users, except: [:new]
   resources :heaplogs, except: [:new]
 
-  match '/:user',     to: 'heaplogs#index',  as: :user_summary
+  match '/:id',       to: 'users#show',      as: :user_summary
   match '/:user/:id', to: 'heaplogs#show',   as: :user_log
 
   root :to => 'home#index'

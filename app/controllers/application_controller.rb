@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
   def self.responder
     SerializingResponder
   end
+
+  private
+
+  def not_found(message="Not Found")
+    raise ActionController::RoutingError.new message
+  end
 end
