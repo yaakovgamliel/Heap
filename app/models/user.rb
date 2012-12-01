@@ -8,6 +8,7 @@ class User
   has_many :heaplogs
 
   field :provided,    type: Hash,   default: -> { Hash.new }
+  field :provider,    type: String, default: 'Twitter'
   field :name,        type: String, default: -> { provided['name'] }
   field :nickname,    type: String, default: -> { provided['nickname'] }
   field :location,    type: String, default: -> { provided['location'] }

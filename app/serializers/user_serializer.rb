@@ -1,5 +1,5 @@
 class UserSerializer < ApplicationSerializer
-  attributes :name, :nickname, :location, :image, :description, :extra_url, :url
+  attributes :name, :nickname, :location, :image, :description, :extra_url, :url, :provider
   has_many :heaplogs
 
   def url
