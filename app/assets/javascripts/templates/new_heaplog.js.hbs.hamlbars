@@ -14,13 +14,13 @@
           %label.control-label{for: 'newHeaplogName'}
             Log name
           .controls
-            %input#newHeaplogName{type: 'text', placeholder: 'Cats ahoy!'}
+            %input#newHeaplogName{type: 'text', placeholder: 'Cats ahoy!', bind: {value: 'newHeaplogName'}}
 
         .control-group
           %label.control-label{for: 'newHeaplogDescription'}
             Description
           .controls
-            %textarea#newHeaplogDescription{rows: 3, placeholder: 'The best collection of pictures of cats dressed as pirates anywhere on the internet!'}
+            %textarea#newHeaplogDescription{rows: 3, placeholder: 'The best collection of pictures of cats dressed as pirates anywhere on the internet!', bind: {value: 'newHeaplogDescription'}}
 
         .control-group
           %label.control-label{for: 'newHeaplogShortName'}
@@ -30,7 +30,7 @@
               %span.add-on
                 = surround '/', '/' do
                   = hb 'userNickname'
-              %input#newHeaplogShortName{type: 'text', placeholder: 'cats-ahoy'}
+              %input#newHeaplogShortName{type: 'text', placeholder: 'cats-ahoy', bind: {value: 'newHeaplogShortName'}}
             %span.help-block
               The URL for this log, which is used to identify it if you have
               multiple logs and for linking to it and its posts.
@@ -39,9 +39,14 @@
             %label.control-label{for: 'newHeaplogBanner'}
               Banner image
             .controls
-              %input#newHeaplogBanner{type: 'file'}
+              %input#newHeaplogBanner{type: 'file', bind: {value: 'newHeaplogBannerUrl'}}
               %span.help-block
                 A beautiful banner image for up the top of your log. Bigger is better, but have some sympathy for people on 3G.
+
+          .control-group
+            .controls
+              %button.btn.btn-primary.btn-large{type: 'submit'}
+                Make it so!
 
 
   = hb 'else'

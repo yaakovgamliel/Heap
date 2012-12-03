@@ -7,6 +7,7 @@ user = DS.Model.extend
   image:       DS.attr 'string'
   description: DS.attr 'string'
   extraUrl:    DS.attr 'string'
+  provider:    DS.attr 'string'
 
   defaultHeaplog: (->
     console.log "Looking for default heaplogs"
