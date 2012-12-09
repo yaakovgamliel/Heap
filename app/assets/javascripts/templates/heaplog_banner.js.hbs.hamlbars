@@ -3,7 +3,7 @@
     .container
       .userinfo
         = hb 'if userImageUrl' do
-          %img{bind: {src: 'userImageUrl', alt: 'userName'}}
+          %img.usericon.default{bind: {src: 'userImageUrl', alt: 'userName'}}
         %span.by by
         %span.whom
           = hb 'userName'

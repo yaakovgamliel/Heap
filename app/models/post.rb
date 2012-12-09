@@ -9,7 +9,7 @@ class Post
   field :title,     type: String
   field :token,      type: String, default: -> { Token.generate }
   field :body,      type: String
-  field :posted_at, type: DateTime
+  field :posted_at, type: DateTime, default: -> { updated_at }
 
   def self.in_reverse_chronological_order
     desc :created_at

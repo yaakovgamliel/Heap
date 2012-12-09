@@ -10,4 +10,8 @@ class HeaplogSerializer < ApplicationSerializer
   def url
     user_log_url(object, user: object.user)
   end
+
+  def posts
+    object.posts.in_reverse_chronological_order
+  end
 end

@@ -1,2 +1,0 @@
-%li.post
-  %h1= hb 'title'

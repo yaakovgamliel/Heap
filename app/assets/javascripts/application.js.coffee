@@ -1,6 +1,7 @@
 #= require handlebars
 #= require jquery
 #= require iscroll
+#= require moment
 #= require ember
 #= require ember-data
 #= require bootstrap

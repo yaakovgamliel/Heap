@@ -9,6 +9,10 @@ user = DS.Model.extend
   extraUrl:    DS.attr 'string'
   provider:    DS.attr 'string'
 
+  nicknameWithAt: (->
+    "@#{@get('nickname')}"
+  ).property('nickname')
+
   defaultHeaplog: (->
     console.log "Looking for default heaplogs"
     defaultLogs = @get('heaplogs').filterProperty('isDefault')

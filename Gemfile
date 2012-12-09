@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'inflection-js-rails'
   gem 'bootstrap-sass'
+  gem 'momentjs-rails'
 end
 
 group :test, :development do

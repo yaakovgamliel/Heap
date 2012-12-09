@@ -5,6 +5,7 @@ $gradient_light: rgba(255,255,128,0.3)
 header
   width: 100%
   margin: 0
+  z-index: 3
   background: 
     color: $green
     size: 100% auto
@@ -14,38 +15,17 @@ header
       max-width: 940px
 
   .userinfo
+    text-align: right
+    float: right
     margin:
       top: 20px
-    @media (max-width: 320px)
-      text-decoration: underline
-      float: right
-      vertical-align: bottom
-      text-align: right
-      img
-        display: none
-      span
-        display: inline
     @media (min-width: 321px)
-      float: right
       text-align: center
       span,img
         margin:
           left: auto
           right: auto
         display: block
-    .by
-      font-size: smaller
-    .whom
-      text-decoration: underline
-    img
-      box-shadow: inset 0px 0px 3px rgba(0,0,0,0.2), 0px 0px 7px rgba(0,0,0,0.8)
-      -webkit-border-radius: 50%
-      -moz-border-radius: 50%
-      border-radius: 50%
-      border: 3px solid white
-      max-width: 64px
-      height: auto
-      width: auto
 
 .jumbotron
   color: white
@@ -85,6 +65,8 @@ header
     line-height: 1.25
     @media (min-width: 321px)
       margin-bottom: 30px
+    @media (max-width: 320px)
+      display: none
   .container
     position: relative
     z-index: 2

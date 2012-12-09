@@ -1,0 +1,14 @@
+%li.post.compact
+  .left
+    = hb 'if authorImageUrl' do
+      %img.usericon.medium{bind: {src: 'authorImageUrl', alt: 'authorName', title: 'authorName'}}
+  .right
+    .title
+      = hb 'title'
+    .meta
+      %span.date{bind: {title: 'serializedPostedAt'}}
+        =hb 'humanizedPostedAt'
+      %span.by
+        by
+      %span.whom{title: 'authorName'}
+        = hb 'authorNickname'
