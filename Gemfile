@@ -39,4 +39,6 @@ group :test, :development do
   gem 'faker'
   gem 'jasminerice'
   gem 'sinon-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
