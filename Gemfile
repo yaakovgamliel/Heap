@@ -16,7 +16,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'ember-rails', github: 'emberjs/ember-rails'
   gem 'jquery-rails'
-  gem 'hamlbars', github: 'jamesotron/hamlbars', branch: 'v2.0'
+  gem 'hamlbars', '~> 2.0.0'
   gem 'therubyracer', '~> 0.11.0beta8', platforms: :ruby
   gem 'libv8', '~> 3.11.8'
   gem 'uglifier', '>= 1.0.3'
@@ -25,7 +25,12 @@ group :assets do
   gem 'momentjs-rails'
 end
 
-group :test, :development do
+group :test,:development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'cucumber'
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard'
@@ -39,6 +44,8 @@ group :test, :development do
   gem 'faker'
   gem 'jasminerice'
   gem 'sinon-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'cucumber-rails'
 end

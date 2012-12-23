@@ -17,3 +17,12 @@ Fabricator(:user) do
   description { Faker::Lorem.sentences(2).join(' ') }
   extra_url { "http://#{Faker::Internet.domain_name}/" }
 end
+
+Fabricator(:heap_user, from: :user) do
+  name {'Heap Team'}
+  nickname {'heap'}
+  location {'The Internets'}
+  image {'/assets/leaf_on_green.png'}
+  description {'The hard working team of monkeys behind [logheap.io](http://logheap.io/).'}
+  extra_url {'http://logheap.io'}
+end
