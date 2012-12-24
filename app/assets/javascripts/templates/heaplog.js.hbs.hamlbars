@@ -1,9 +1,2 @@
-#horizontal_overflow
-
-  #info
-
-  = hb 'view Heap.PostListView'
-
-  #post_content
-
-  #post_extra
+= hb 'view Heap.PostListView'
+= hb 'outlet postDetail'

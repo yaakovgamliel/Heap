@@ -31,13 +31,13 @@ header
   color: white
   position: relative
   @media (min-width: 321px)
-    padding: 
+    padding:
       top: 40px
       bottom: 40px
       left: 20px
       right: 20px
   @media (max-width: 320px)
-    padding: 
+    padding:
       top: 8px
       bottom: 8px
       left: 8px
@@ -53,9 +53,15 @@ header
   background: linear-gradient(45deg, $gradient_dark 0%, $gradient_light 100%)
   box-shadow: inset 0px -7px 14px rgba(0,0,0,0.2), inset -3px 0px 24px rgba(0,0,0,0.1)
   h1
-    font-size: 80px
-    font-weight: bold
-    letter-spacing: -1px
+    @media (min-width: 321px)
+      font-size: 80px
+      font-weight: bold
+      letter-spacing: -1px
+    @media (max-width: 320px)
+      font-size: 40px
+      font-weight: bold
+      letter-spacing: -1px
+
     line-height: 1
     margin:
       left: -6px

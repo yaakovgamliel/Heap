@@ -21,7 +21,6 @@ group :assets do
   gem 'libv8', '~> 3.11.8'
   gem 'uglifier', '>= 1.0.3'
   gem 'inflection-js-rails'
-  gem 'bootstrap-sass'
   gem 'momentjs-rails'
 end
 

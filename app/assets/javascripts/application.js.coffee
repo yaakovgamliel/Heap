@@ -3,7 +3,10 @@
 #= require moment
 #= require ember
 #= require ember-data
-#= require bootstrap
+#= require ratchet/popover
+#= require ratchet/slider
+#= require ratchet/tabs
+#= require ratchet/toggle
 #= require_self
 #= require heap
 

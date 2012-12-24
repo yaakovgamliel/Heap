@@ -19,6 +19,7 @@ Heap.Router = Em.Router.extend
       connectOutlets: (router, user)->
         defaultHeaplog = user.get('defaultHeaplog')
         appController = router.get('applicationController')
+        console.log defaultHeaplog
         if defaultHeaplog?
           appController.connectOutlet('banner', 'heaplogBanner', defaultHeaplog)
           appController.connectOutlet('page', 'heaplog', defaultHeaplog)

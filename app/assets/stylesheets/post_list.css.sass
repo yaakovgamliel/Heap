@@ -1,32 +1,25 @@
-.post_list
-  min-width: 320px
-  width: 25%
-  height: 100%
-  display: table-cell
-  background:
-    color: rgba(255,255,255,0.8)
+ul#post_list
+  @media (max-width: 320px)
+    width: 100%
+  @media (min-width: 321px)
+    width: 320px
 
-ul
-  margin: 0
-  padding: 0
-  list-style-type: none
-
-  .post 
-    display: block
+  .post.compact
     margin: 0
     padding: 8px
-    min-height: 128px !important
-    .left
-      display: table-cell
-      width: 70px
-      text-align: center
-      .usericon
-        margin:
-          top: 20px
-    .right
-      display: table-cell
-      .title
+    .usericon
+      float: left
+      margin: 0
+    .title
+      font:
+        size: 20px
+        weight: 500
+        letter-spacing: -1px
+    .meta,.title
+      margin-left: 70px
+    .meta
+      .by
         font:
-          size: 24px
-        line-height: 32px
+          size: smaller
+          style: italic
     @include clearfix
