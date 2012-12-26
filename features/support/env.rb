@@ -1,11 +1,7 @@
 require 'cucumber/rails'
-require 'capybara/poltergeist'
+require 'terminus'
+Capybara.current_driver = :terminus
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, inspector: 'open', js_errors: false)
-end
-
-Capybara.javascript_driver = :poltergeist
 Capybara.default_selector = :css
 Capybara.server_port = 4697
 Capybara.default_wait_time = 5

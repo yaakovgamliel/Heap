@@ -29,7 +29,7 @@ group :test,:development do
   gem 'binding_of_caller'
   gem 'cucumber'
   gem 'capybara'
-  gem 'poltergeist'
+  gem 'terminus'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard'
