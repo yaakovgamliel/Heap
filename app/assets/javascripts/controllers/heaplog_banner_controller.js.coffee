@@ -5,5 +5,8 @@ Heap.HeaplogBannerController = Em.Controller.extend
   userImageUrlBinding: 'content.user.image'
   userNameBinding: 'content.user.name'
   cssStyleAdditions: (->
-    "background-image: url(#{@get('bannerUrl')});"
+    if @get('bannerUrl')
+      "background-image: url(#{@get('bannerUrl')});"
+    else
+      ''
   ).property('bannerUrl')

@@ -10,7 +10,7 @@ class Heaplog
   field :description, type: String
   field :short_name, type: String, default: -> { name.to_url }
   field :banner_url, type: String
-  
+
   field :public, type: Boolean, default: true
 
   index({short_name: 1}, {unique: true})

@@ -14,12 +14,9 @@ user = DS.Model.extend
   ).property('nickname')
 
   defaultHeaplog: (->
-    console.log "Looking for default heaplogs"
     defaultLogs = @get('heaplogs').filterProperty('isDefault')
     return defaultLogs.get('firstObject') if defaultLogs.get('length') > 0
 
-    console.log "Looking for any heaplogs"
-    console.log "All heaplogs: #{@get('heaplogs.length')}"
     @get('heaplogs').get('firstObject') if @get('heaplogs.length') > 0
   ).property('heaplogs')
 

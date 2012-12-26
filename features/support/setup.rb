@@ -1,3 +1,6 @@
 Before do
-  step '1 heap_user'
+  user = Fabricate(:heap_user)
+  log  = Fabricate(:heaplog, user: user)
+  10.times { Fabricate(:post, heaplog: log) }
+  Capybara.current_driver = :poltergeist
 end

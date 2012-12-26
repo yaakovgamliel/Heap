@@ -5,5 +5,8 @@ Heap.UserBannerController = Em.Controller.extend
   imageUrlBinding: 'content.image'
   nicknameBinding: 'content.nickname'
   cssStyleAdditions: (->
-    "background-image: url(#{@get('bannerUrl')});"
+    if @get('bannerUrl')
+      "background-image: url(#{@get('bannerUrl')});"
+    else
+      ''
   ).property('bannerUrl')

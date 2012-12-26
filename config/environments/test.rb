@@ -29,12 +29,12 @@ Heap::Application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  config.log_level = :debug
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
   config.ember.variant = :production
-  
-  Rails.application.routes.default_url_options[:host]= 'logheap.io'
 
+  Rails.application.routes.default_url_options[:host]= '127.0.0.1:4697'
 end

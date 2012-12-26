@@ -1,6 +1,6 @@
 Fabricator(:user) do
   name { Faker::Name.name }
-  nickname { Faker::Name.name.gsub(/\ /,'').underscore }
+  nickname { Faker::Name.name.to_url }
   location { "#{Faker::Address.city}, #{Faker::Address.state}." }
   image do
     %w[
