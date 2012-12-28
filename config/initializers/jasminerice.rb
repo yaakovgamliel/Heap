@@ -1,1 +1,1 @@
-Jasminerice.mount = false
+Jasminerice.mount = false if defined? Jasminerice

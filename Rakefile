@@ -6,5 +6,4 @@ require File.expand_path('../config/application', __FILE__)
 
 Heap::Application.load_tasks
 
-task :cucumber => :terminus
-task :suite => ['spec', 'guard:jasmine', 'cucumber']
+task :suite => ['spec', 'guard:jasmine', 'terminus', 'cucumber']

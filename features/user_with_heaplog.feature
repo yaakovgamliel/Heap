@@ -1,3 +1,4 @@
+@javascript
 Feature: Users with heaplogs
 
   Scenario: visiting a user's only heaplog

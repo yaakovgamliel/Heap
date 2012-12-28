@@ -9,3 +9,7 @@ end
 Then /^I wait for ([0-9]+(?:\.[0-9]+)?) seconds?$/ do |delay|
   sleep delay.to_f
 end
+
+Then 'I print the page source to stdout' do
+  puts page.source
+end

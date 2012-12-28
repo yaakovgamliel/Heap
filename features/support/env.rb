@@ -1,10 +1,11 @@
 require 'cucumber/rails'
 require 'terminus'
 Capybara.current_driver = :terminus
+Capybara.javascript_driver = :terminus
 
 Capybara.default_selector = :css
 Capybara.app = Heap::Application
-Capybara.default_wait_time = 5
+Capybara.default_wait_time = 10
 ActionController::Base.allow_rescue = false
 begin
   DatabaseCleaner.strategy = :truncation
