@@ -21,6 +21,22 @@ GIT
     active_model_serializers (0.5.2)
       activemodel (>= 3.0)
 
+PATH
+  remote: vendor/plugins/terminus
+  specs:
+    terminus (0.4.0)
+      capybara (>= 0.4.0)
+      childprocess (>= 0.3.0)
+      cookiejar (>= 0.3.0)
+      faye (>= 0.8.2)
+      oyster (>= 0.9.0)
+      packr (>= 3.1.0)
+      rack (>= 1.0.0)
+      rack-proxy (>= 0.3.0)
+      sinatra (>= 1.0.0)
+      thin (>= 1.2.0)
+      useragent (>= 0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -276,18 +292,6 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     terminal-notifier-guard (1.5.3)
-    terminus (0.4.0)
-      capybara (>= 0.4.0)
-      childprocess (>= 0.3.0)
-      cookiejar (>= 0.3.0)
-      faye (>= 0.8.2)
-      oyster (>= 0.9.0)
-      packr (>= 3.1.0)
-      rack (>= 1.0.0)
-      rack-proxy (>= 0.3.0)
-      sinatra (>= 1.0.0)
-      thin (>= 1.2.0)
-      useragent (>= 0.3.0)
     therubyracer (0.11.0)
       ref
     thin (1.5.0)
@@ -348,7 +352,7 @@ DEPENDENCIES
   sinon-rails
   stringex!
   terminal-notifier-guard
-  terminus
+  terminus!
   therubyracer (~> 0.11.0beta8)
   thin
   uglifier (>= 1.0.3)

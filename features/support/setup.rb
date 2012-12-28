@@ -1,5 +1,10 @@
+if ENV['BROWSER']
+  Terminus.start_browser(port: 4696) if Terminus.browsers.empty?
+else
+  Terminus.start_phantomjs port: 4696
+end
+
 Before do
-  Terminus.start_browser port: 4567 unless Terminus.browsers.any?
   Terminus.browser = :docked
   user = Fabricate(:heap_user)
   log  = Fabricate(:heaplog, user: user)

@@ -2,5 +2,8 @@ language: ruby
 rvm:
   - 1.9.3
 script: 'rake suite'
+before_install:
+  - git sumodule init
+  - git sumodule update
 services:
   - mongodb

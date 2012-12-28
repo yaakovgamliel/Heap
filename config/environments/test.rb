@@ -36,5 +36,6 @@ Heap::Application.configure do
 
   config.ember.variant = :production
 
-  Rails.application.routes.default_url_options[:host]= '127.0.0.1:4697'
+  Rails.application.routes.default_url_options[:host]= '127.0.0.1'
+  Rails.application.routes.default_url_options[:port]= '4697'
 end

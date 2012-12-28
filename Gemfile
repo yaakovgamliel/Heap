@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.9'
 gem 'mongoid', '~> 3.0.0'
@@ -29,7 +30,7 @@ group :test,:development do
   gem 'binding_of_caller'
   gem 'cucumber'
   gem 'capybara'
-  gem 'terminus'
+  gem 'terminus', path: 'vendor/plugins/terminus'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard'

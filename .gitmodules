@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/terminus"]
+	path = vendor/plugins/terminus
+	url = https://github.com/jcoglan/terminus.git

@@ -11,5 +11,5 @@ Heap::Application.routes.draw do
   match '/:id',       to: 'users#show',      as: :user_summary
   match '/:user/:id', to: 'heaplogs#show',   as: :user_log
 
-  root :to => 'home#index'
+  root to: 'users#show', id: 'heap'
 end

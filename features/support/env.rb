@@ -3,7 +3,7 @@ require 'terminus'
 Capybara.current_driver = :terminus
 
 Capybara.default_selector = :css
-Capybara.server_port = 4697
+Capybara.app = Heap::Application
 Capybara.default_wait_time = 5
 ActionController::Base.allow_rescue = false
 begin
