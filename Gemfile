@@ -30,7 +30,7 @@ group :test,:development do
   gem 'binding_of_caller'
   gem 'cucumber'
   gem 'capybara'
-  gem 'terminus', path: 'vendor/plugins/terminus'
+  gem 'terminus', path: 'vendor/gems/terminus'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard'

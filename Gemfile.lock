@@ -22,7 +22,7 @@ GIT
       activemodel (>= 3.0)
 
 PATH
-  remote: vendor/plugins/terminus
+  remote: vendor/gems/terminus
   specs:
     terminus (0.4.0)
       capybara (>= 0.4.0)

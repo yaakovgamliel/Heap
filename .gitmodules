@@ -1,3 +1,4 @@
-[submodule "vendor/plugins/terminus"]
-	path = vendor/plugins/terminus
-	url = https://github.com/jcoglan/terminus.git
+
+[submodule "vendor/gems/terminus"]
+	path = vendor/gems/terminus
+	url = git://github.com/jcoglan/terminus.git

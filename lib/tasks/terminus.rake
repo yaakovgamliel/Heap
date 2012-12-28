@@ -1,9 +1,9 @@
 task :terminus do
   sh <<-EOF
-    test -e vendor/plugins/terminus || git submodule init;
+    test -e vendor/gems/terminus || git submodule init;
     git submodule update;
     (
-      cd vendor/plugins/terminus;
+      cd vendor/gems/terminus;
       git submodule init;
       git submodule update;
       npm install;
