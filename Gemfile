@@ -25,9 +25,12 @@ group :assets do
   gem 'momentjs-rails'
 end
 
-group :test,:development do
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test,:development do
   gem 'cucumber'
   gem 'capybara'
   gem 'terminus', path: 'vendor/gems/terminus'
