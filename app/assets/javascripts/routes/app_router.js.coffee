@@ -5,7 +5,7 @@ Heap.Router = Em.Router.extend
   root: Em.Route.extend
     index: Em.Route.extend
       route: '/'
-      connectOutlets: (router) ->
+      enter: (router) ->
         router.route('/heap')
 
     heaplogs: Em.Route.extend
