@@ -6,4 +6,4 @@ require File.expand_path('../config/application', __FILE__)
 
 Heap::Application.load_tasks
 
-task :suite => ['spec', 'guard:jasmine', 'terminus', 'cucumber']
+task :suite => ['spec', 'guard:jasmine', 'terminus', 'assets:precompile', 'cucumber', 'assets:clean']

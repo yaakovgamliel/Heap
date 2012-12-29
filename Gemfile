@@ -15,7 +15,7 @@ gem 'stringex', github: 'jamesotron/stringex'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'ember-rails', github: 'emberjs/ember-rails'
+  gem 'ember-rails'
   gem 'jquery-rails'
   gem 'hamlbars', '~> 2.0.0'
   gem 'therubyracer', '~> 0.11.0beta8', platforms: :ruby
