@@ -19,7 +19,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'hamlbars', '~> 2.0.0'
   gem 'therubyracer', '~> 0.11.0beta8', platforms: :ruby
-  gem 'libv8', '~> 3.11.8'
+  #gem 'libv8', '~> 3.11.8'
   gem 'uglifier', '>= 1.0.3'
   gem 'inflection-js-rails'
   gem 'momentjs-rails'

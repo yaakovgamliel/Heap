@@ -173,7 +173,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jshint_on_rails (1.0.2)
     json (1.7.5)
-    libv8 (3.11.8.4)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -331,7 +330,6 @@ DEPENDENCIES
   inflection-js-rails
   jasminerice
   jquery-rails
-  libv8 (~> 3.11.8)
   momentjs-rails
   mongoid (~> 3.0.0)
   omniauth

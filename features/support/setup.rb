@@ -1,5 +1,5 @@
 if ENV['BROWSER']
-  Terminus.start_browser(port: 4696) if Terminus.browsers.empty?
+  Terminus.start_browser(port: 4696)
 else
   Terminus.start_phantomjs port: 4696
 end

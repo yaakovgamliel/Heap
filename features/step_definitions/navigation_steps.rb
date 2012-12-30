@@ -5,7 +5,7 @@ When /^I visit '(.+)'$/ do |uri|
 end
 
 Then /^I am redirected to '(.+)'$/ do |path|
-  page.source
+  page.current_url
   page.current_path.should eq(path)
 end
 

@@ -1,2 +1,2 @@
 Heap.ApplicationView = Ember.View.extend
-  templateName: 'application'
+  templateName: 'application_template'
